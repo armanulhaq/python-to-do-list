@@ -1,20 +1,23 @@
 todo = []
 while True:
-    print("Enter add, show, edit or exit")
-    user_input = input()
+    user_input = input("Enter add, show, edit, complete or exit: ")
     user_input = user_input.strip()
+
     match user_input:
         case "add":
-            add_input = input("Enter a todo: ")
-            todo.append(add_input)
+            added_input = input("Enter a todo: ")
+            todo.append(added_input)
         case "show":
             for index, item in enumerate(todo):
-                row = f"{index}. {item}"
+                row = f"{index + 1}. {item}"
                 print(row)
         case "edit":
-            index_to_edit = int(input("Enter the index of the to do you want to edit: ")) -1
+            index_to_edit = int(input("Enter the index of the to do you want to edit: ")) - 1
             edited_to_do = input("Enter what you want to write in place of that: ")
             todo[index_to_edit] = edited_to_do
+        case "complete":
+            index_to_complete = int(input("Enter the index that you want to complete: "))
+            todo.pop(index_to_complete - 1)
         case "exit":
             break;
 print("Bye!")
