@@ -5,7 +5,7 @@ while True:
     user_input = user_input.strip()
     match user_input:
         case "add":
-            add_input = input()
+            add_input = input("Enter a todo: ")
             todo.append(add_input)
         case "show":
             for index, item in enumerate(todo):
