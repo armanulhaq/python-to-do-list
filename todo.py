@@ -8,8 +8,9 @@ while True:
             add_input = input()
             todo.append(add_input)
         case "show":
-            for item in todo:
-                print(item)
+            for index, item in enumerate(todo):
+                row = f"{index}. {item}"
+                print(row)
         case "edit":
             index_to_edit = int(input("Enter the index of the to do you want to edit: ")) -1
             edited_to_do = input("Enter what you want to write in place of that: ")
