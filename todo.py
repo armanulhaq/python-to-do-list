@@ -2,7 +2,7 @@ while True:
     user_input = input("Enter add, show, edit, complete or exit: ")
     user_input = user_input.strip()
 
-    if "add" in user_input:
+    if user_input.startswith("add"):
         added_input = user_input[4:]
 
         with open('todos.txt', 'r') as file:
@@ -13,7 +13,7 @@ while True:
         with open('todos.txt', 'w') as file:
             file.writelines(todos)
 
-    elif "show" in user_input:
+    elif user_input.startswith('show'):
         with open('todos.txt', 'r') as file:
             todo = file.readlines()
 
@@ -22,7 +22,7 @@ while True:
             row = f"{index + 1}. {item}"
             print(row)
 
-    elif "edit" in user_input:
+    elif user_input.startswith('edit'):
         index_to_edit = int(user_input[5:]) - 1
         with open('todos.txt', 'r') as file:
             todo = file.readlines()
@@ -33,7 +33,7 @@ while True:
         with open('todos.txt', 'w') as file:
             file.writelines(todo)
 
-    elif "complete" in user_input:
+    elif user_input.startswith('complete'):
         index_to_complete = int(user_input[9:])
         with open('todos.txt', 'r') as file:
             todo = file.readlines()
@@ -44,7 +44,8 @@ while True:
             file.writelines(todo)
 
         print(f"{todo_to_remove.strip('\n')} has been removed.")
-    elif "exit" in user_input:
+
+    elif user_input.startswith('exit'):
         break;
 
     else:
