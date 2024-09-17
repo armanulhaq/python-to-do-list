@@ -3,10 +3,10 @@ import functions
 
 def add_todo():
     todo = st.session_state["new_todo"] + "\n"
-    #creates a dictionary with "new_todo" as key and the item
-    #you enter as value
     todos.append(todo)
     functions.write_todos(todos)
+    # Clear the text input after adding the new todo
+    st.session_state["new_todo"] = ""
 
 todos = functions.get_todos('todos.txt')
 
