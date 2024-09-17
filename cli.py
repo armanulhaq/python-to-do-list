@@ -14,7 +14,7 @@ while True:
         todo = get_todos('todos.txt')
         todo.append(added_input + '\n')
 
-        write_todos('todos.txt', todo)
+        write_todos(todo)
 
     elif user_input.startswith('show'):
 
@@ -35,7 +35,7 @@ while True:
             todo[index_to_edit] = edited_to_do + '\n'
 
             # Write the updated todos list back to the file
-            write_todos('todos.txt',todo)
+            write_todos(todo)
 
         except ValueError:
             print("Invalid Command")
@@ -47,7 +47,7 @@ while True:
             todo = get_todos('todos.txt')
             todo_to_remove = todo.pop(index_to_complete - 1)
 
-            write_todos('todos.txt', todo)
+            write_todos(todo)
 
             # Remove the newline character before passing it to the f-string
             todo_to_remove = todo_to_remove.strip('\n')

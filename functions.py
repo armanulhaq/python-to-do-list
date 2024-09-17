@@ -3,6 +3,6 @@ def get_todos(filename='todos.txt'):
         todos = file.readlines()
         return todos
 
-def write_todos(todos, filename='todox.txt'):
+def write_todos(todos):
     with open('todos.txt', 'w') as file:
             file.writelines(todos)
