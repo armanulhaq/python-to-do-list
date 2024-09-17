@@ -1,5 +1,7 @@
+import time
 from functions import get_todos, write_todos
 
+now = time.strftime("%b" "%d" "%Y" "%H":"%M":"%S")
 while True:
     user_input = input("Enter add, show, edit, complete or exit: ")
     user_input = user_input.strip()
