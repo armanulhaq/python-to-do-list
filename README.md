@@ -18,7 +18,7 @@ The To-Do App is a web application built using Streamlit that allows users to ma
 1. Clone the repository:
 ```bash
    git clone https://github.com/armanulahq/python-to-do-list.git
-   cd todo-app
+   cd python-to-do-list
 ```
 2. Create a virtual environment:
 ```bash
